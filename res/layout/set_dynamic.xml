@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relat_setdynamic"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/nearby_color" >
+
+    <RelativeLayout
+        android:id="@id/My_search_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/navigation_bg"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/me_dynamic"
+            android:textAppearance="@style/TextAppearanceTitleLager" />
+
+        <ImageButton
+            android:id="@id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_back_img" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@id/framelayout_err_connet"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/My_search_title"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/edit_dy"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/framelayout_err_connet"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:padding="8dp"
+        android:background="@drawable/set_dy_bg"
+        android:hint="@string/about_you"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/txt_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/edit_dy"
+        android:layout_below="@id/edit_dy"
+        android:paddingTop="5dp"
+        android:textColor="@color/text_detail" />
+
+    <GridView
+        android:id="@+id/noScrollgridview"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_num"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:numColumns="3"
+        android:scrollbars="none"
+        android:verticalSpacing="8dp"
+        android:horizontalSpacing="8dp" >
+    </GridView>
+
+    <Button
+        android:id="@+id/set_dy_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/noScrollgridview"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:padding="5dp"
+        android:background="@drawable/set_dy_btn_img"
+        android:text="@string/set_updata"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <RelativeLayout
+        android:id="@id/loading_relat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/loading_list_bg"
+        android:padding="5dp" 
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@id/loading_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/loading_list" />
+    </RelativeLayout>
+    
+</RelativeLayout>

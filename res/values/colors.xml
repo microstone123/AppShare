@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#00000000</color>
+    <color name="search_man_col">#939393</color>
+
+    <drawable name="transparent_d">#00000000</drawable>
+
+    <color name="lightwhite">#ddd</color>
+    <color name="nearby_top_color">#aeaeae</color>
+    <color name="text_col">#6a6a6a</color>
+    <color name="text_content">#484848</color>
+    <color name="text_bg">#eeeeee</color>
+    <color name="nearby_color">#FFFFFF</color>
+    <color name="load_bg_color">#b1b1b1</color>
+    <color name="item_click">#acb5b7</color>
+    <color name="img_error_c">#dfdfdf</color>
+    <color name="white">#FFFFFF</color>
+    <color name="text_blue">#2bdaff</color>
+    <color name="black">#000000</color>
+    <color name="sign_col">#11b3fe</color>
+    <color name="top_bg">#f0f0f0</color>
+    <color name="text_detail">#9a9a9a</color>
+    <color name="text_comment">#655DCA</color>
+    <color name="introdu_color">#eeeeee</color>
+    <color name="gally_color">#c9d6d9</color>
+    <color name="text_ye_color">#a75a00</color>
+    <color name="grey21">#363636</color>
+    <color name="myapp_text">#ff6c00</color>
+    <!-- drop down list header font color -->
+    <color name="drop_down_list_header_font_color">#000000</color>
+    <!-- drop down list header second font color -->
+    <color name="drop_down_list_header_second_font_color">#000000</color>
+    <!-- drop down list footer font color -->
+    <color name="drop_down_list_footer_font_color">#000000</color>
+
+    <!-- 身边搜索字体集合 -->
+    <color name="text_color01">#293e57</color>
+    <color name="text_color02">#d76e6e</color>
+    <color name="text_color03">#2b8300</color>
+    <color name="text_color04">#b24bab</color>
+    <color name="text_color05">#7b5648</color>
+    <color name="text_color06">#6a6a6a</color>
+    <color name="text_color07">#1e92d5</color>
+    <color name="text_color08">#d57d1e</color>
+    <color name="text_color09">#ff3eb9</color>
+    <color name="text_color10">#0a644a</color>
+    <color name="text_color11">#156e00</color>
+    <color name="text_color12">#00556e</color>
+    <color name="text_color13">#cb6e13</color>
+    <color name="text_color14">#64457c</color>
+    <color name="text_color15">#0f571d</color>
+    <color name="text_color16">#494017</color>
+    <color name="text_color17">#ea40bc</color>
+    <color name="text_color18">#5c5c5c</color>
+    <color name="text_color19">#275017</color>
+    <color name="text_color20">#5f6da7</color>
+
+</resources>

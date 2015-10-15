@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/nearby_color" >
+
+    <LinearLayout
+        android:id="@id/ll_anniu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <ImageButton
+                android:id="@id/chatting_biaoqing_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/chatting_setmode_biaoqing_btn_pressed"
+                android:minWidth="0.0dip"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <EditText
+                android:id="@id/dynaic_text"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/set_q_text"
+                android:maxHeight="80dp"
+                android:textColor="@color/text_col"
+                android:textSize="18sp" >
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@id/formclient_btsend"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="5dip"
+                android:background="@drawable/set_btn_img"
+                android:text="@string/set_updata"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@id/viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_below="@+id/ll_anniu"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:visibility="gone" >
+    </android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@id/page_select"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewpager"
+        android:background="#ddd"
+        android:gravity="center_horizontal"
+        android:paddingBottom="5dp"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@id/page0_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/page_focused" />
+
+        <ImageView
+            android:id="@id/page1_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/page_unfocused" />
+
+        <ImageView
+            android:id="@id/page2_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/page_unfocused" />
+    </LinearLayout>
+
+</RelativeLayout>

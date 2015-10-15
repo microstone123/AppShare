@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/nearby_color" >
+
+    <RelativeLayout
+        android:id="@id/My_search_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/navigation_bg"
+        android:orientation="horizontal" >
+
+        <com.hyk.view.CustomMarqueeTextView
+            android:id="@+id/details_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxEms="8"
+            android:singleLine="true"
+            android:text="@string/app_detail"
+            android:textAppearance="@style/TextAppearanceTitleLager" />
+
+        <ImageButton
+            android:id="@id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_back_img" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@id/framelayout_err_connet"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/My_search_title"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@id/loading_relat"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/relat_layout"
+        android:layout_below="@id/framelayout_err_connet"
+        android:background="@color/nearby_color" >
+
+        <ImageView
+            android:id="@id/loading_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/loading_list" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/detail_relat"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/framelayout_err_connet"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/detail_app"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="15dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="15dp" >
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/detail_logo_image"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:scaleType="fitCenter" />
+
+            <com.hyk.view.CustomMarqueeTextView
+                android:id="@+id/detail_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/detail_logo_image"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@id/detail_logo_image"
+                android:maxEms="10"
+                android:paddingTop="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/detail_down_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/detail_name"
+                android:layout_below="@id/detail_name"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/detail_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/detail_down_num"
+                android:layout_toRightOf="@id/detail_down_num"
+                android:paddingLeft="12dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" >
+
+                <ProgressBar
+                    android:id="@+id/detail_progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="65dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:progressDrawable="@drawable/progressbar_down" />
+
+                <Button
+                    android:id="@+id/detail_dowble"
+                    android:layout_width="65dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@+id/detail_progressBar"
+                    android:layout_alignLeft="@id/detail_progressBar"
+                    android:layout_alignRight="@+id/detail_progressBar"
+                    android:layout_alignTop="@+id/detail_progressBar"
+                    android:background="@color/transparent"
+                    android:focusable="false"
+                    android:onClick="favoriteShop"
+                    android:text="@string/app_dowble"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/detail_info_ScrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/detail_app"
+            android:fadingEdge="none" >
+
+            <RelativeLayout
+                android:id="@+id/ddetail_info_t"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <RelativeLayout
+                    android:id="@+id/ddetail_info_center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp" >
+
+                    <HorizontalScrollView
+                        android:id="@+id/ddetail_mInfoScrollView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"
+                        android:scrollbars="none" >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <GridView
+                                android:id="@+id/dmInfoGridView"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:columnWidth="138dp"
+                                android:gravity="center_vertical"
+                                android:horizontalSpacing="5dp"
+                                android:numColumns="auto_fit"
+                                android:scrollbars="none" />
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/the_app_introdu_re"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ddetail_info_center"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp" >
+
+                    <TextView
+                        android:id="@+id/introdu_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="3dp"
+                        android:text="@string/introdu_text"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/introdu_line"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/introdu_text"
+                        android:background="@drawable/set_line" />
+
+                    <TextView
+                        android:id="@+id/the_de_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/introdu_line"
+                        android:paddingTop="5dp"
+                        android:textColor="@color/text_detail" />
+
+                    <RelativeLayout
+                        android:id="@+id/line_relat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@id/the_de_text"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="3dp" >
+
+                        <ImageButton
+                            android:id="@+id/detait_up_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/up_btn" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/the_app_evaluate_re"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/the_app_introdu_re"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp" >
+
+                    <TextView
+                        android:id="@+id/app_evaluate_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_evaluate"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:id="@+id/app_evaluate_list"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/app_evaluate_text"
+                        android:background="@drawable/set_line" />
+
+                    <fragment
+                        android:id="@+id/rela_comment"
+                        android:name="com.hyk.fragment.AppReviewFragment"
+                        android:layout_below="@id/app_evaluate_list"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp" >
+                    </fragment>
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</RelativeLayout>

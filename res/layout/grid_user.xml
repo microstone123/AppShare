@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/nearby_color"
+    android:paddingBottom="15dp"
+    android:paddingTop="15dp" >
+
+    <RelativeLayout
+        android:id="@+id/relat_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/userapp_logo_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="fitCenter"
+            app:corner_radius="5dip"
+            app:is_oval="false" />
+
+        <RelativeLayout
+            android:id="@+id/relat_img_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/userapp_logo_image"
+            android:layout_toRightOf="@id/userapp_logo_image" >
+
+            <com.hyk.view.CustomMarqueeTextView
+                android:id="@+id/userapp_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:maxEms="8"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/userapp_down_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/userapp_name"
+                android:layout_below="@id/userapp_name"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/userapp_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/userapp_down_num"
+                android:layout_toRightOf="@id/userapp_down_num"
+                android:paddingLeft="12dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/userapp_progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="65dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:progressDrawable="@drawable/list_progressbar" />
+
+    <Button
+        android:id="@+id/userapp_dowble"
+        android:layout_width="265dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@id/userapp_progressBar"
+        android:layout_alignLeft="@id/userapp_progressBar"
+        android:layout_alignRight="@id/userapp_progressBar"
+        android:layout_alignTop="@id/userapp_progressBar"
+        android:layout_marginRight="3dp"
+        android:background="@color/transparent"
+        android:focusable="false"
+        android:onClick="favoriteShop"
+        android:text="@string/app_dowble"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+    <RelativeLayout
+        android:id="@+id/relat_userapp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relat_img"
+        android:layout_marginLeft="80dp" >
+
+        <TextView
+            android:id="@+id/app_introduction"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/open_introduction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/app_introduction"
+            android:background="@drawable/down_btn" />
+    </RelativeLayout>
+
+</RelativeLayout>

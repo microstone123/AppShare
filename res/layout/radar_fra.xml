@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:imagecontrol="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.hyk.activity.nearby.Circleview
+        android:id="@+id/iv_scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/radar" />
+
+    <ImageView
+        android:id="@+id/radar_img"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/the_radar_aple" />
+
+    <com.hyk.view.RoundImageView
+        android:id="@+id/the_radar_btn"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignBottom="@id/radar_img"
+        android:layout_alignLeft="@id/radar_img"
+        android:layout_alignRight="@id/radar_img"
+        android:layout_alignTop="@id/radar_img"
+        android:scaleType="fitXY"
+        imagecontrol:border_outside_color="#00000000"
+        imagecontrol:border_thickness="4dp" />
+
+    <ImageView
+        android:id="@+id/the_radar_d"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/the_radar_d"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
+
+</RelativeLayout>

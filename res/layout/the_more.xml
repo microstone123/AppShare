@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+      android:background="@color/nearby_color" >
+
+    <RelativeLayout
+        android:id="@id/My_search_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/navigation_bg"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/set_up"
+            android:textAppearance="@style/TextAppearanceTitleLager" />
+
+        <ImageButton
+            android:id="@id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/btn_back_img" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relat_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/My_search_title" >
+
+        <ListView
+            android:id="@+id/the_more_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/setup_bg"
+            android:divider="@drawable/set_line"
+            android:fadingEdge="none"
+            android:scrollingCache="false" >
+        </ListView>
+    </RelativeLayout>
+
+
+</RelativeLayout>

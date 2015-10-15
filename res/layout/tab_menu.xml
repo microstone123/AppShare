@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hyk.activity.AnimationTabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/msg_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" >
+
+            <!--
+            <TextView
+                android:id="@+id/tv_wb"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/titlebar_lightgray_bg" >
+            </TextView>
+            -->
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0" />
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <RadioGroup
+            android:id="@+id/main_radio"
+            android:layout_width="fill_parent"
+            android:layout_height="64dp"
+            android:layout_gravity="bottom"
+            android:paddingTop="2dp"
+            android:background="@drawable/footerbg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+             <RadioButton
+                android:id="@+id/radio_button0"
+                style="@style/main_tab_bottom"
+                android:checked="true"
+                android:layout_marginRight="1dp"
+                android:background="@drawable/nearby_s"
+                android:tag="radio_button1" />
+
+            <RadioButton
+                android:id="@+id/radio_button1"
+                style="@style/main_tab_bottom"
+                android:layout_marginRight="1dp"
+                android:background="@drawable/search_s"
+                android:tag="radio_button1" />
+
+            <RadioButton
+                android:id="@+id/radio_button2"
+                style="@style/main_tab_bottom"
+                android:layout_marginRight="1dp"
+                android:background="@drawable/myapp_s"
+                android:tag="radio_button2" />
+
+            <RadioButton
+                android:id="@+id/radio_button3"
+                style="@style/main_tab_bottom"
+                android:background="@drawable/mycenter_s"
+                android:tag="radio_button3" />
+        </RadioGroup>
+    </LinearLayout>
+
+</com.hyk.activity.AnimationTabHost>

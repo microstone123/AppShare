@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/nearby_color" >
+
+    <com.hyk.view.DragListView
+        android:id="@+id/dy_list_viewq"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="false"
+        android:divider="@drawable/detai_line"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:scrollingCache="false" />
+
+</RelativeLayout>

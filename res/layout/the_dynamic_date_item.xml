@@ -1,0 +1,99 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nearby_color"
+    android:paddingLeft="10dp"
+    android:paddingTop="3dp" >
+
+    <TextView
+        android:id="@+id/the_date_item_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="3dp"
+        android:text="@string/about_text"
+        android:textColor="@color/text_detail"
+        android:textSize="14sp" />
+
+    <RelativeLayout
+        android:id="@+id/date_relat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/the_date_item_tv"
+        android:layout_below="@id/the_date_item_tv" >
+
+        <TextView
+            android:id="@+id/the_date_conten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:paddingLeft="3dp"
+            android:text="@string/about_text"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <com.hyk.view.NewsGridView
+            android:id="@+id/the_date_grid"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/the_date_conten"
+            android:layout_below="@id/the_date_conten"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="3dp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/reply_btn"
+        android:layout_width="25dp"
+        android:layout_height="15dp"
+        android:layout_alignLeft="@id/the_date_item_tv"
+        android:layout_below="@id/date_relat"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:paddingRight="10dp" />
+
+    <RelativeLayout
+        android:id="@+id/praise_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+         android:layout_below="@id/date_relat"
+        android:layout_toRightOf="@id/reply_btn" >
+
+        <Button
+            android:id="@+id/praise_b"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/praise_btn_img" />
+
+        <TextView
+            android:id="@+id/praise_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:layout_toRightOf="@id/praise_b"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="5dp"
+            android:textColor="@color/black"
+            android:text="12"/>
+    </RelativeLayout>
+
+    <com.hyk.view.NestListView
+        android:id="@+id/date_comment_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/reply_btn"
+        android:layout_below="@id/reply_btn"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/reply_bg"
+        android:clickable="false"
+        android:divider="@color/transparent"
+        android:drawSelectorOnTop="false"
+        android:fadingEdge="none"
+        android:scrollingCache="false" />
+
+</RelativeLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/nearby_color" >
+
+    <RelativeLayout
+        android:id="@id/My_search_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/navigation_bg"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/nearby_search"
+            android:textAppearance="@style/TextAppearanceTitleLager" />
+
+        <ImageButton
+            android:id="@id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/btn_back_img" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@id/framelayout_err_connet"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/My_search_title"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/framelayout_err_connet"
+        android:background="@drawable/search_bg" >
+
+        <LinearLayout
+            android:id="@+id/search_application"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@color/transparent"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp"
+            android:paddingLeft="25dp"
+            android:paddingTop="12dp" >
+
+            <EditText
+                android:id="@+id/tv_searchInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:background="@drawable/btn_searchinput"
+                android:hint="@string/search_key"
+                android:paddingLeft="15dp"
+                android:paddingRight="10dp"
+                android:singleLine="true"
+                android:textColor="@color/text_col"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/nearby_search_img"
+                android:text="@string/nearby_search"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <com.hyk.view.KeywordsView
+            android:id="@+id/the_search_range"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/search_application" >
+        </com.hyk.view.KeywordsView>
+    </RelativeLayout>
+
+</RelativeLayout>

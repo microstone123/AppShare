@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activityRoot"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/nearby_color" >
+
+    <RelativeLayout
+        android:id="@id/My_search_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/navigation_bg"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/chat_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/nearby_man"
+            android:textAppearance="@style/TextAppearanceTitleLager" />
+
+        <ImageButton
+            android:id="@id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/btn_back_img" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@id/framelayout_err_connet"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/My_search_title"
+        android:visibility="gone" />
+
+    <com.hyk.view.TopDownListView
+        android:paddingTop="10dp"
+        android:id="@+id/formclient_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/relat_layout"
+        android:layout_below="@id/framelayout_err_connet"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent"/>
+
+    <RelativeLayout
+        android:id="@id/relat_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="3dp" >
+
+        <LinearLayout
+            android:id="@id/ll_anniu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:paddingBottom="3dp" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <ImageButton
+                    android:id="@id/chatting_biaoqing_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/chatting_setmode_biaoqing_btn_pressed"
+                    android:minWidth="0.0dip"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:focusableInTouchMode="true" >
+
+                <EditText
+                    android:id="@id/dynaic_text"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/set_q_text"
+                    android:maxHeight="80dp"
+                    android:textColor="@color/text_col"
+                    android:textSize="18sp" >
+                </EditText>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@id/formclient_btsend"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="8dip"
+                    android:layout_marginRight="5dip"
+                    android:background="@drawable/set_btn_img"
+                    android:text="@string/set_updata"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@id/viewpager"
+            android:layout_width="wrap_content"
+            android:layout_height="165dp"
+            android:layout_below="@+id/ll_anniu"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:visibility="gone" >
+        </android.support.v4.view.ViewPager>
+
+        <LinearLayout
+            android:id="@id/page_select"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewpager"
+            android:background="#ddd"
+            android:gravity="center_horizontal"
+            android:paddingBottom="5dp"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@id/page0_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/page_focused" />
+
+            <ImageView
+                android:id="@id/page1_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/page_unfocused" />
+
+            <ImageView
+                android:id="@id/page2_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/page_unfocused" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

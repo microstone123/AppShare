@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <item name="btn_back" type="id"></item>
+    <item name="linear_img" type="id"></item>
+    <item name="img_line" type="id"></item>
+    <item name="My_search_title" type="id"></item>
+    <item name="text_err_connet" type="id"></item>
+    <item name="framelayout_err_connet" type="id"></item>
+    <item name="relat_layout" type="id"></item>
+    <item name="ll_anniu" type="id"></item>
+    <item name="chatting_biaoqing_btn" type="id"></item>
+    <item name="formclient_btsend" type="id"></item>
+    <item name="viewpager" type="id"></item>
+    <item name="page_select" type="id"></item>
+    <item name="dynaic_text" type="id"></item>
+    <item name="page0_select" type="id"></item>
+    <item name="page1_select" type="id"></item>
+    <item name="page2_select" type="id"></item>
+    <item name="loading_img" type="id"></item>
+    <item name="loading_relat" type="id"></item>
+    <item name="linearLayout1" type="id"></item>
+    <item name="vPager" type="id"></item>
+    <item name="linear_comm" type="id"></item>
+     <item name="root_relat" type="id"></item>
+</resources>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hyk.activity"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <permission
+        android:name="com.hyk.permission.ACCESS_DOWNLOAD_MANAGER"
+        android:description="@string/permdesc_downloadManager"
+        android:label="@string/permlab_downloadManager"
+        android:protectionLevel="normal" />
+
+    <!-- Allows advanced access to the Download Manager -->
+    <permission
+        android:name="com.hyk.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED"
+        android:description="@string/permdesc_downloadManagerAdvanced"
+        android:label="@string/permlab_downloadManagerAdvanced"
+        android:protectionLevel="normal" />
+
+    <!-- Allows to send broadcasts on download completion -->
+    <permission
+        android:name="com.hyk.permission.SEND_DOWNLOAD_COMPLETED_INTENTS"
+        android:description="@string/permdesc_downloadCompletedIntent"
+        android:label="@string/permlab_downloadCompletedIntent"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="com.hyk.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="com.hyk.permission.ACCESS_DOWNLOAD_MANAGER_ADVANCED" />
+    <uses-permission android:name="com.hyk.permission.SEND_DOWNLOAD_COMPLETED_INTENTS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <application
+        android:name="com.hyk.xmpp.XmppApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="app_type"
+            android:value="nightly" />
+        <meta-data
+            android:name="app_channel"
+            android:value="trunk" />
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="BUTCBIt9XAdg1AbZ3jhz3GTS" />
+
+        <activity
+            android:name="com.hyk.activity.WelcomeActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent222222" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="com.hyk.providers.downloads.DownloadProvider"
+            android:authorities="com.hyk.downloads" />
+
+        <service android:name="com.hyk.providers.downloads.DownloadService" />
+
+        <receiver
+            android:name="com.hyk.providers.downloads.DownloadReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 引导界面 -->
+        <activity
+            android:name=".GuideActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 主界面分页 -->
+        <activity
+            android:name=".TabMenuActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 身边 -->
+        <activity
+            android:name="com.hyk.activity.NearByActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 消息 -->
+        <activity
+            android:name="com.hyk.activity.NewsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 我的应用 -->
+        <activity
+            android:name="com.hyk.activity.myapp.MyAPPTabActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoBackGroundTheme" >
+        </activity>
+        <activity
+            android:name="com.hyk.activity.photo.ImagePagerActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/AppTheme" />
+        <!-- 个人中心 -->
+
+        <activity
+            android:name="com.hyk.activity.MyCenterActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 附近用户列表 -->
+        <activity
+            android:name="com.hyk.activity.nearby.AppListActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- app详情 -->
+        <activity
+            android:name="com.hyk.activity.app.AppDetailsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 搜索界面 -->
+        <activity
+            android:name="com.hyk.activity.TheSearchActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.hyk.mycenter.SelectPicPopup"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@style/MyDialogStyleBottom" >
+        </activity>
+        <!-- 搜索列表界面 -->
+        <activity
+            android:name="com.hyk.activity.SearchOflistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 发表动态界面 -->
+        <activity
+            android:name="com.hyk.activity.center.SetDynamicActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.hyk.activity.center.set.FeaturesActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.hyk.activity.center.set.AnnouncementActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.hyk.activity.center.set.CheckUpdataActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.hyk.activity.center.set.FeedbackActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 设置界面 -->
+        <activity
+            android:name="com.hyk.activity.center.SetUpActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 个人信息界面 -->
+        <activity
+            android:name="com.hyk.activity.nearby.UserInfoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 空界面 -->
+        <activity
+            android:name="com.hyk.activity.EmptyActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 好友界面 -->
+        <activity
+            android:name="com.hyk.activity.news.ContactsActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!-- 更新提示界面 -->
+        <activity
+            android:name="com.hyk.activity.DialogActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Dialog" />
+
+        <!-- 个人动态 界面 -->
+        <activity
+            android:name="com.hyk.activity.center.TheDynamicActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hyk.activity.photo.ImageGridActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.hyk.activity.photo.AlbumPhotoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.hyk.activity.news.ChatActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.hyk.activity.photo.PhotoActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+
+        <!-- 百度服务 -->
+        <service
+            android:name="com.hyk.service.BaiduLocationService"
+            android:screenOrientation="portrait" >
+        </service>
+
+        <!-- 获取应用使用情况服务 -->
+        <service
+            android:name="com.hyk.service.ContentAppService"
+            android:enabled="true"
+            android:process="com.hyk.service.ContentAppService" >
+        </service>
+        <service
+            android:name="com.hyk.service.SetDynamicService"
+            android:enabled="true" >
+        </service>
+        <!-- 百度服务 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+
+        <!-- 网络连接广播 -->
+        <receiver
+            android:name="com.hyk.broadcast.ConnectionChangeReceiver"
+            android:label="NetworkConnection" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 关机广播 -->
+        <receiver android:name="com.hyk.broadcast.ShutdownBroad" >
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:imagecontrol="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/nearby_color" >
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/app_attention_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/app_attention_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_attention_img"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/text_col"
+        android:singleLine="true"
+        android:paddingTop="20dp"
+        android:textSize="12sp" />
+
+</RelativeLayout>

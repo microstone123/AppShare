@@ -1,0 +1,130 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/diao_reLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@id/loading_relat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:background="@drawable/loading_list_bg">
+
+        <ImageView
+            android:id="@id/loading_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/loading_list" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/detail_relat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_dialog_background"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:id="@+id/diao_info_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:paddingTop="15dp" >
+
+            <com.hyk.view.RoundedImageView
+                android:id="@+id/diao_logo_image"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="4dp"
+                android:scaleType="fitCenter"
+                app:corner_radius="5dip"
+                app:is_oval="false" />
+
+            <com.hyk.view.CustomMarqueeTextView
+                android:id="@+id/diao_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/diao_logo_image"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/diao_logo_image"
+                android:maxEms="10"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/app_down_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/diao_name"
+                android:layout_below="@id/diao_name"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/diao_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/app_down_num"
+                android:layout_toRightOf="@id/app_down_num"
+                android:paddingLeft="12dp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/app_detail_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/diao_logo_image"
+                android:ellipsize="end"
+                android:lines="5"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/par_relat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/diao_info_top"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp" >
+
+            <ProgressBar
+                android:id="@+id/diao_progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="265dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="3dp"
+                android:progressDrawable="@drawable/detail_progressbar" />
+
+            <Button
+                android:id="@+id/diao_dowble"
+                android:layout_width="265dp"
+                android:layout_height="30dp"
+                android:layout_alignBottom="@+id/diao_progressBar"
+                android:layout_alignLeft="@id/diao_progressBar"
+                android:layout_alignRight="@+id/diao_progressBar"
+                android:layout_alignTop="@+id/diao_progressBar"
+                android:layout_marginRight="3dp"
+                android:background="@color/transparent"
+                android:focusable="false"
+                android:onClick="favoriteShop"
+                android:text="@string/app_dowble"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.01"
+        android:orientation="vertical" >
+
+        <ImageButton
+            android:id="@+id/chat_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_back_img" />
+
+        <TextView
+            android:id="@+id/chat_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#ffffff"
+            android:textSize="16.0sp" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/formclient_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0"
+        android:cacheColorHint="@null"
+        android:fastScrollEnabled="true"
+        android:stackFromBottom="true"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent" />
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.01"
+        android:background="#FFEEEEEE" >
+
+        <LinearLayout
+            android:id="@+id/ll_anniu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" >
+
+            <ImageButton
+                android:id="@+id/chatting_biaoqing_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="3dp"
+                android:background="@null"
+                android:minWidth="0.0dip"
+                android:paddingBottom="4.0dip"
+                android:paddingTop="5.0dip"
+                android:src="@drawable/chatting_setmode_biaoqing_btn"
+                android:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/chatting_biaoqing_focuse_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:background="@null"
+                android:minWidth="0.0dip"
+                android:paddingBottom="4.0dip"
+                android:paddingTop="5.0dip"
+                android:src="@drawable/chatting_setmode_biaoqing_btn"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/ll_fasong"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible" >
+
+                <EditText
+                    android:id="@+id/formclient_text"
+                    android:layout_width="230dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/set_q_text"
+                    android:maxHeight="80dp"
+                    android:textColor="@color/text_col"
+                    android:textSize="18sp" >
+
+                    <requestFocus />
+                </EditText>
+
+                <Button
+                    android:id="@+id/formclient_btsend"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:layout_alignTop="@id/formclient_text"
+                    android:layout_marginLeft="8dip"
+                    android:layout_marginRight="3dip"
+                    android:layout_toRightOf="@id/formclient_text"
+                    android:background="@drawable/set_btn_s"
+                    android:text="@string/about_you" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="wrap_content"
+            android:layout_height="140dip"
+            android:layout_below="@+id/ll_anniu"
+            android:layout_gravity="center"
+            android:background="#f32f33"
+            android:visibility="gone" >
+        </android.support.v4.view.ViewPager>
+
+        <LinearLayout
+            android:id="@+id/page_select"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viewpager"
+            android:background="#ddd"
+            android:gravity="center_horizontal"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/page0_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="matrix"
+                android:src="@drawable/page_focused" />
+
+            <ImageView
+                android:id="@+id/page1_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:scaleType="matrix"
+                android:src="@drawable/page_unfocused" />
+
+            <ImageView
+                android:id="@+id/page2_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:scaleType="matrix"
+                android:src="@drawable/page_unfocused" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

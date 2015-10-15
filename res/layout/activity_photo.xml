@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relat_setdynamic"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/black" >
+
+    <RelativeLayout
+        android:id="@id/My_search_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/black"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/photo_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/me_dynamic"
+            android:textAppearance="@style/TextAppearanceTitleLager" />
+    </RelativeLayout>
+
+    <com.hyk.photo.HackyViewPager
+        android:id="@+id/viewpager"
+        android:layout_below="@id/My_search_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.hyk.photo.HackyViewPager>
+
+    <RelativeLayout
+        android:id="@+id/photo_relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingTop="5dp"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/photo_bt_exit"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bt_quxiao" />
+
+        <Button
+            android:id="@+id/photo_bt_del"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bt_shanchu" />
+
+        <Button
+            android:id="@+id/photo_bt_enter"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bt_queding" />
+    </RelativeLayout>
+
+</RelativeLayout>
